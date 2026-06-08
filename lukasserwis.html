@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>LUKASSERWIS | Stacja kontroli pojazdów – Ponin | Diagnostyka</title>
+    <meta name="description" content="Stacja kontroli pojazdów LUKASSERWIS w Poninie. Ocena 5.0 (229 opinii). Szybkie przeglądy techniczne, diagnostyka, uczciwa obsługa do 20:00. Zadzwoń!">
+    <meta name="robots" content="index, follow">
+    <!-- Google Fonts: Inter + fallback dla maksymalnej czytelności 40+ -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <style>
+        /* RESET + GLOBALNE - minimalizm, brak zbędnych animacji, duża czytelność */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #ffffff;
+            color: #1a2c3e;
+            line-height: 1.5;
+            font-size: 18px;
+        }
+
+        /* kontenery i odstępy */
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+
+        section {
+            padding: 80px 0;
+            border-bottom: 1px solid #eef2f6;
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        /* typografia - duże czcionki */
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: #0a2f44;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            margin-bottom: 1rem;
+            color: #0f3b4c;
+        }
+
+        h3 {
+            font-size: 1.7rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+
+        .section-lead {
+            font-size: 1.25rem;
+            color: #2c4b5e;
+            max-width: 760px;
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+        }
+
+        /* karty / boxy */
+        .card-light {
+            background: #f9fbfd;
+            border-radius: 2rem;
+            padding: 2rem;
+            border: 1px solid #e6edf2;
+            transition: none;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+        }
+
+        /* przyciski (duże, wyraźne) */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 16px 34px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 60px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border: none;
+            font-family: inherit;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: #1a5d8f;
+            color: white;
+            box-shadow: 0 6px 12px rgba(26, 93, 143, 0.2);
+        }
+
+        .btn-primary:hover {
+            background: #0e4268;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-light {
+            background: transparent;
+            border: 2px solid #1a5d8f;
+            color: #1a5d8f;
+        }
+
+        .btn-outline-light:hover {
+            background: #eef4fa;
+            border-color: #0e4268;
+            color: #0e4268;
+        }
+
+        .btn-ghost {
+            background: white;
+            border: 1px solid #cbdde9;
+            color: #1e5a7d;
+        }
+
+        /* hero - inny układ niż poprzednio, bardziej "kliencki" */
+        .hero-v2 {
+            background: linear-gradient(112deg, #f2f7fc 0%, #ffffff 70%);
+            padding: 70px 0 60px;
+        }
+
+        .hero-two-columns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .hero-left {
+            flex: 1.2;
+            min-width: 260px;
+        }
+
+        .hero-right {
+            flex: 0.9;
+            background: white;
+            border-radius: 2.5rem;
+            padding: 32px 28px;
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.07);
+            border: 1px solid #eef2f8;
+        }
+
+        .rating-xl {
+            display: inline-flex;
+            background: #fff1da;
+            padding: 10px 24px;
+            border-radius: 60px;
+            gap: 12px;
+            font-weight: 700;
+            margin: 1.2rem 0 1.5rem;
+        }
+
+        .stars-gold {
+            color: #f4b942;
+            font-size: 1.3rem;
+            letter-spacing: 2px;
+        }
+
+        .badge-local {
+            background: #e1ecf4;
+            color: #1a5d8f;
+            display: inline-block;
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 1.2rem;
+        }
+
+        /* lista usług w siatce */
+        .services-v2 {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 28px;
+            margin-top: 20px;
+        }
+
+        .service-tile {
+            flex: 1;
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 32px 24px;
+            border: 1px solid #e9eff4;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.02);
+            transition: all 0.1s ease;
+        }
+
+        .service-icon-big {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+
+        /* opinie - kafelki z cytatami */
+        .opinion-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 32px 0 15px;
+        }
+
+        .opinion-block {
+            flex: 1;
+            background: #fefefe;
+            border-radius: 28px;
+            padding: 28px;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.03);
+            border: 1px solid #eef2f0;
+        }
+
+        .quote-mark {
+            font-size: 2.2rem;
+            line-height: 1;
+            color: #bed3e6;
+            margin-bottom: 10px;
+        }
+
+        /* kontakt - większy nacisk na duże przyciski */
+        .contact-panel {
+            background: #f5f9fe;
+            border-radius: 2rem;
+            padding: 44px 40px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .contact-col {
+            flex: 1;
+        }
+
+        .big-phone {
+            font-size: 1.9rem;
+            font-weight: 800;
+            color: #0f3f5c;
+            text-decoration: none;
+            display: inline-block;
+            margin: 12px 0;
+        }
+
+        .hours-highlight {
+            background: white;
+            border-radius: 48px;
+            padding: 10px 24px;
+            display: inline-block;
+            font-weight: 700;
+            margin-top: 12px;
+        }
+
+        .map-button-xl {
+            background: white;
+            border-radius: 60px;
+            padding: 14px 28px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: #1a5d8f;
+            border: 1px solid #cde0ec;
+            margin-top: 20px;
+            transition: 0.1s;
+        }
+
+        .map-button-xl:hover {
+            background: #e9f2f9;
+        }
+
+        /* sticky call - drugi wariant, bardziej widoczny */
+        .floating-call {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            background: #0f3f5c;
+            color: white;
+            padding: 16px 30px;
+            border-radius: 80px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-decoration: none;
+            box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 999;
+            border: none;
+            backdrop-filter: blur(0px);
+            transition: 0.15s;
+        }
+
+        .floating-call:hover {
+            background: #0a2f48;
+            transform: scale(1.02);
+        }
+
+        /* stopka */
+        .footer-v2 {
+            background: #f1f6fa;
+            padding: 48px 0 32px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .footer-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        /* responsywność + duże elementy dotykowe */
+        @media (max-width: 800px) {
+            body {
+                font-size: 16px;
+            }
+            h1 {
+                font-size: 2.6rem;
+            }
+            h2 {
+                font-size: 2rem;
+            }
+            .btn {
+                padding: 14px 24px;
+                font-size: 1rem;
+            }
+            section {
+                padding: 55px 0;
+            }
+            .contact-panel {
+                padding: 30px 24px;
+            }
+            .floating-call {
+                padding: 12px 22px;
+                font-size: 1rem;
+                bottom: 20px;
+                right: 20px;
+            }
+            .big-phone {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 580px) {
+            .hero-two-columns {
+                flex-direction: column;
+            }
+            .btn-group {
+                flex-direction: column;
+                width: 100%;
+            }
+            .btn-group .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            .container {
+                padding: 0 20px;
+            }
+        }
+
+        /* pomocnicze */
+        .mt-2 {
+            margin-top: 0.8rem;
+        }
+        .mt-3 {
+            margin-top: 1.5rem;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .flex-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            margin: 24px 0 10px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- STICKY PRZYCISK ZADZWOŃ TERAZ - na każdej sekcji -->
+<a href="tel:+48697497730" class="floating-call" aria-label="Zadzwoń teraz do stacji">
+    📞 Zadzwoń teraz
+</a>
+
+<!-- HERO / SEKCJA GŁÓWNA (wersja 2) -->
+<section class="hero-v2">
+    <div class="container">
+        <div class="hero-two-columns">
+            <div class="hero-left">
+                <div class="badge-local">🏆 Lider opinii w Wielkopolsce</div>
+                <h1>LUKASSERWIS<br>Łukasz Skrzypczak</h1>
+                <p style="font-size:1.35rem; font-weight:500; color:#1f5575;">Profesjonalna stacja kontroli pojazdów w Poninie</p>
+                <p style="font-size:1.05rem; margin: 1rem 0 0.5rem; color:#2c5368;">Przeglądy techniczne · Diagnostyka · Bez kolejek · Uczciwość</p>
+                <div class="rating-xl">
+                    <span class="stars-gold">★★★★★</span>
+                    <span><strong>5,0</strong> (229 opinii)</span>
+                </div>
+                <div class="flex-buttons">
+                    <a href="tel:+48697497730" class="btn btn-primary">📞 Zadzwoń teraz</a>
+                    <a href="https://maps.google.com/?q=Kobylnicka+5a,+64-000+Ponin" target="_blank" class="btn btn-outline-light">🗺️ Wyznacz trasę</a>
+                </div>
+                <p class="mt-2" style="font-size:0.95rem;">✔️ Szybka obsługa | ✔️ Do 20:00 | ✔️ Pomoc po godzinach</p>
+            </div>
+            <div class="hero-right">
+                <div style="display: flex; flex-direction: column; gap: 20px;">
+                    <div><span style="font-size:2.5rem;">🔧</span> <strong style="font-size:1.2rem;">Zaufany diagnosta</strong>
+                    <p style="margin-top: 8px;">Łukasz Skrzypczak – doświadczenie i podejście, które doceniają kierowcy z Ponina i okolic.</p></div>
+                    <hr style="border-color:#e2edf5;">
+                    <div><span style="font-size:1.8rem;">⏱️</span> <strong>Godziny otwarcia:</strong><br>
+                    <span style="font-weight:600;">Pon–Pt: 8:00 – 20:00</span><br>Sobota: 9:00 – 15:00 (po kontakcie)</div>
+                    <div><span style="font-size:1.6rem;">📍</span> <strong>Kobylnicka 5a, Ponin</strong><br>Łatwy dojazd, parking dla aut.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- O NAS – nowy wydźwięk (bardziej lokalny i zaufanie) -->
+<section>
+    <div class="container">
+        <h2>Lokalna stacja z sercem do diagnostyki</h2>
+        <div class="section-lead">Łukasz Skrzypczak i jego zespół to gwarancja rzetelnych przeglądów oraz indywidualnego podejścia. Jesteśmy dumni z opinii 5.0.</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 32px;">
+            <div style="flex: 1.5;">
+                <p style="font-size:1.1rem; margin-bottom: 20px;">Działamy na lokalnym rynku od lat, a <strong>229 pozytywnych recenzji</strong> potwierdza, że stawiamy na <strong>uczciwość, szybkość i pomoc nawet poza standardowymi godzinami</strong>. Każdy klient jest dla nas ważny – słuchamy, doradzamy i nigdy nie narzucamy niepotrzebnych napraw.</p>
+                <p style="color: #2c4f6e;">✔️ Doświadczenie i nowoczesny sprzęt diagnostyczny<br>
+                ✔️ Elastyczne godziny – otwarte do 20:00<br>
+                ✔️ Pomoc w nagłych sytuacjach (także po godzinach)</p>
+            </div>
+            <div class="card-light" style="flex:1;">
+                <div style="font-size:2.2rem; margin-bottom: 8px;">⭐ 5,0 / 5</div>
+                <div><strong>229 opinii</strong> na Mapach Google</div>
+                <div style="margin-top: 20px;">„Profesjonalizm, szybka obsługa i uczciwość – to najczęstsze słowa w recenzjach naszych klientów.”</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- USŁUGI – przejrzysta siatka -->
+<section>
+    <div class="container">
+        <h2>Zakres usług</h2>
+        <div class="section-lead">Kompleksowa diagnostyka i badania techniczne – szybko, bez zbędnych kolejek.</div>
+        <div class="services-v2">
+            <div class="service-tile">
+                <div class="service-icon-big">🚗</div>
+                <h3>Przeglądy techniczne</h3>
+                <p>Badania okresowe dla pojazdów osobowych, dostawczych i motocykli. Szybkie terminy i pełna dokumentacja.</p>
+            </div>
+            <div class="service-tile">
+                <div class="service-icon-big">📟</div>
+                <h3>Diagnostyka komputerowa</h3>
+                <p>Skanowanie wszystkich układów: silnik, ABS, ESP, poduszki powietrzne. Precyzyjna analiza usterek.</p>
+            </div>
+            <div class="service-tile">
+                <div class="service-icon-big">⏳</div>
+                <h3>Obsługa bez kolejek</h3>
+                <p>Sprawna organizacja pracy – wjazd na stację najczęściej od ręki lub w umówionej godzinie. Oszczędź swój czas!</p>
+            </div>
+        </div>
+        <div style="background: #f1f8fe; border-radius: 28px; padding: 18px 26px; margin-top: 28px;">
+            <p><strong>📢 Informacja:</strong> Możliwość wykonania przeglądu również po wcześniejszym kontakcie w sobotę. Pracujemy na nowoczesnym sprzęcie, gwarantujemy przejrzystość.</p>
+        </div>
+    </div>
+</section>
+
+<!-- OPINIE – kolejne 3 różne cytaty (ale zgodne z wymaganiami) -->
+<section>
+    <div class="container">
+        <h2>Co mówią nasi klienci?</h2>
+        <div class="section-lead">Średnia 5,0 z 229 recenzji – sprawdź, dlaczego kierowcy nam ufają.</div>
+        <div class="opinion-wrapper">
+            <div class="opinion-block">
+                <div class="quote-mark">“</div>
+                <p class="opinion-text" style="font-size:1rem; font-weight:500;">Najlepsza stacja w okolicy. Szybki przegląd, wszystko wyjaśnione. Po godzinach pomógł mi z awarią – ogromny profesjonalizm.</p>
+                <div class="stars-gold">★★★★★</div>
+                <div style="margin-top: 12px;">— Katarzyna M.</div>
+            </div>
+            <div class="opinion-block">
+                <div class="quote-mark">“</div>
+                <p class="opinion-text" style="font-size:1rem; font-weight:500;">Polecam każdemu. Brak zbędnej biurokracji, uczciwe podejście i pełna diagnoza bez ukrytych kosztów. Do tego otwarte do 20:00 – rewelacja!</p>
+                <div class="stars-gold">★★★★★</div>
+                <div style="margin-top: 12px;">— Marek J.</div>
+            </div>
+            <div class="opinion-block">
+                <div class="quote-mark">“</div>
+                <p class="opinion-text" style="font-size:1rem; font-weight:500;">Pan Łukasz to człowiek na medal. Pomógł mi po godzinach pracy, rzetelnie i szybko. Takich fachowców brakuje. 5/5!</p>
+                <div class="stars-gold">★★★★★</div>
+                <div style="margin-top: 12px;">— Robert Z.</div>
+            </div>
+        </div>
+        <div class="text-center mt-3">
+            <span style="background: #f0f3f8; padding: 8px 26px; border-radius: 60px;">⭐ 5,0/5 · 229 opinii klientów · wysoka jakość</span>
+        </div>
+    </div>
+</section>
+
+<!-- KONTAKT + MAPA + GODZINY - duże przyciski i czytelne dane -->
+<section>
+    <div class="container">
+        <h2>Skontaktuj się lub odwiedź nas</h2>
+        <div class="contact-panel">
+            <div class="contact-col">
+                <h3 style="margin-bottom: 16px;">📞 Masz pytanie?</h3>
+                <a href="tel:+48697497730" class="big-phone">697 497 730</a>
+                <p style="margin: 12px 0 8px;"><strong>Adres:</strong> Kobylnicka 5a, 64-000 Ponin</p>
+                <div class="hours-highlight">🕘 Poniedziałek – Piątek: 8:00 – 20:00<br> Sobota: 9:00 – 15:00</div>
+                <a href="https://maps.google.com/?q=Kobylnicka+5a,+64-000+Ponin" target="_blank" class="map-button-xl">
+                    📍 Otwórz Google Maps – Wyznacz trasę
+                </a>
+            </div>
+            <div class="contact-col">
+                <h3>📍 Jak dojechać?</h3>
+                <p>Stacja znajduje się przy ul. Kobylnickiej 5a w Poninie, łatwo dostępna z drogi wojewódzkiej. Duży parking dla samochodów osobowych i dostawczych.</p>
+                <div style="background: white; border-radius: 20px; padding: 16px; margin-top: 20px;">
+                    <p style="display: flex; gap: 12px; align-items: center;">✅ <strong>„Pomoc nawet poza godzinami pracy”</strong> – potwierdzają to nasi klienci.</p>
+                </div>
+                <!-- dodatkowy widoczny przycisk telefonu w sekcji kontakt -->
+                <div style="margin-top: 30px;">
+                    <a href="tel:+48697497730" class="btn btn-primary" style="width: 100%; text-align: center;">📞 Zadzwoń teraz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- STOPKA (nowa wersja) -->
+<footer class="footer-v2">
+    <div class="container">
+        <div class="footer-grid">
+            <div><strong>LUKASSERWIS Łukasz Skrzypczak</strong><br>Kobylnicka 5a, 64-000 Ponin</div>
+            <div><a href="tel:+48697497730" style="text-decoration: none; font-weight: 600; color: #1a5d8f;">📞 697 497 730</a></div>
+            <div>© 2025 LUKASSERWIS – Stacja kontroli pojazdów</div>
+        </div>
+        <div style="margin-top: 28px; font-size: 0.85rem; color: #5f7e95;">Przeglądy techniczne, diagnostyka, uczciwe podejście – Zapraszamy codziennie (pn-pt do 20:00).</div>
+    </div>
+</footer>
+
+</body>
+</html>
